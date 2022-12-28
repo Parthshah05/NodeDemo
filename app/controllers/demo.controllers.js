@@ -48,8 +48,8 @@ exports.login = async (req, res) => {
 exports.getAll = async (req, res) => {
   try {
  
-    let name = req.query.name
-    let records = await demoService.getAllRecords(name)
+    //let name = req.query.name
+    let records = await demoService.getAllRecords()
     res.send('data')
     return res.status(200).json(successResponse(constants.DEMO_LIST, records))
   } catch (err) {
