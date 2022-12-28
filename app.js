@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // }))
 
 //console.log(webpush.generateVAPIDKeys());
-
+require('./app/routes/demo.routes')(app)
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to My Demo project.' })
 })
@@ -89,7 +89,7 @@ app.get('/', (req, res) => {
 //       console.log(_);
 //   });
 
-require('./app/routes/demo.routes')(app)
+
 //const router = require('./app/routes/demo.routes')
 //app.use('/api/demo', router)
 // set port, listen for requests
