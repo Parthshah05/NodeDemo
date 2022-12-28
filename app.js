@@ -3,7 +3,7 @@ const cors = require('cors')
 const app = express()
 const path = require("path");
 const http = require('http')
-const socketIO = require('socket.io')
+//const socketIO = require('socket.io')
 var bodyParser = require('body-parser');
 require('dotenv').config({ path: path.resolve(__dirname, './.env') })
 app.use(cors())
