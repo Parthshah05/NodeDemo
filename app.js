@@ -4,10 +4,14 @@ const app = express()
 const path = require("path");
 const http = require('http')
 const socketIO = require('socket.io')
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+var bodyParser = require('body-parser');
 require('dotenv').config({ path: path.resolve(__dirname, './.env') })
+app.use(cors())
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(express.json())
+// app.use(express.urlencoded({ extended: true }))
+
 
 //const webpush = require('web-push');
 // app.use(express.json({
