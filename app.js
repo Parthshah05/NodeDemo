@@ -3,7 +3,6 @@ const cors = require('cors')
 const app = express()
 const path = require("path");
 const http = require('http')
-const demoController = require('./app/controllers/demo.controllers')
 //const socketIO = require('socket.io')
 var bodyParser = require('body-parser');
 require('dotenv').config({ path: path.resolve(__dirname, './.env') })
@@ -25,8 +24,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //console.log(webpush.generateVAPIDKeys());
 
-app.get('/api/demo', demoController.getAll)
-
+app.get('/api/demo', (req, res) => {
+  res.json({ message: 'Welcome to My Demo project.' })
+})
 
 // const server = http.createServer(app)
 // const io = socketIO(server, {
