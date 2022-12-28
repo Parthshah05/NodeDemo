@@ -89,9 +89,9 @@ app.get('/', (req, res) => {
 //       console.log(_);
 //   });
 
-//require('./app/routes/demo.routes')(app)
-const router = require('./app/routes/demo.routes')
-app.use('/api/demo', router)
+require('./app/routes/demo.routes')(app)
+//const router = require('./app/routes/demo.routes')
+//app.use('/api/demo', router)
 // set port, listen for requests
 const PORT = 3000
 app.listen(PORT, () => {
