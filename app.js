@@ -7,8 +7,9 @@ const http = require('http')
 var bodyParser = require('body-parser');
 require('dotenv').config({ path: path.resolve(__dirname, './.env') })
 app.use(cors())
-app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // app.use(express.json())
 // app.use(express.urlencoded({ extended: true }))
 
@@ -24,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //console.log(webpush.generateVAPIDKeys());
 
-app.get('/api/demo', (req, res) => {
+app.get('/', (req, res) => {
   res.json({ message: 'Welcome to My Demo project.' })
 })
 
